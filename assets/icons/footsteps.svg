@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Footsteps icon">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="60" cy="60" r="47" stroke="#b99043" stroke-width="7"/>
+    <path d="M17 52c18-35 70-41 91-6M18 73c23 30 70 31 91 0" stroke="#8c682d" stroke-width="3" opacity=".75"/>
+  </g>
+  <g fill="#f7f7f2">
+    <path d="M39 79c-8-2-15 3-17 10-2 8 3 14 11 16 9 2 15-3 17-11 2-7-3-13-11-15Z"/>
+    <path d="M45 38c-9-2-16 5-18 16-2 12 3 20 12 22 9 1 16-6 18-17 2-12-3-20-12-21Z"/>
+    <path d="M77 65c-9 1-14 8-13 16 1 9 8 14 17 13 9-1 14-8 13-16-1-9-8-14-17-13Z"/>
+    <path d="M81 21c-9 1-14 10-13 22 1 12 8 19 17 18 9-1 14-10 13-22-1-12-8-19-17-18Z"/>
+    <path d="M31 58h16v4H31zM29 70h16v4H29zM70 43h16v4H70zM72 56h16v4H72z" fill="#030609" opacity=".9"/>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Mountain icon">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="60" cy="60" r="47" stroke="#b99043" stroke-width="7"/>
+    <path d="M16 49c23-35 72-39 93-1M18 75c24 26 67 26 90-2" stroke="#8c682d" stroke-width="3" opacity=".75"/>
+    <path d="M20 84 44 54l14 18 24-34 20 46" stroke="#f7f7f2" stroke-width="7"/>
+    <path d="m44 54 5 19 9-1M82 38l-2 23 10-3M30 83c14-11 30-13 48-8" stroke="#f7f7f2" stroke-width="5"/>
+  </g>
+</svg>
