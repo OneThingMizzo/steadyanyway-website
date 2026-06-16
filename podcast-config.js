@@ -6,10 +6,11 @@ window.STEADY_PODCAST_CONFIG = {
   latestVideoUrl: "",
 
   player: {
-    // After the show is published on Spotify:
-    // 1. Open the show in Spotify.
-    // 2. Choose Share > Embed show.
-    // 3. Paste the complete iframe code OR only its src URL below.
+    // Paste a complete iframe embed code or only its src URL.
+    // Works with Spotify embeds, Spotify for Podcasters embeds, and standard HTTPS iframe players.
+    embedUrl: "",
+
+    // Backward-compatible alias for older edits.
     spotifyEmbed: "",
   },
 

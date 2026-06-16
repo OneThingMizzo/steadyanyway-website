@@ -3,7 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Podcast | Steady Anyway</title>
+    <title>Steady Anyway Podcast | Episodes for Real Life</title>
+    <meta name="description" content="Listen to the Steady Anyway podcast for conversations about discipline, family, work, health, setbacks, faith, habits, and steady progress." />
+    <link rel="canonical" href="https://steadyanyway.com/podcast.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Steady Anyway Podcast | Episodes for Real Life" />
+    <meta property="og:description" content="Episodes for the days that test you." />
+    <meta property="og:url" content="https://steadyanyway.com/podcast.html" />
+    <meta property="og:image" content="https://steadyanyway.com/assets/mountain-hero.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Steady Anyway Podcast | Episodes for Real Life" />
+    <meta name="twitter:description" content="Conversations about discipline, work, health, setbacks, faith, habits, and steady progress." />
+    <meta name="twitter:image" content="https://steadyanyway.com/assets/mountain-hero.png" />
+    <link rel="icon" href="assets/steady-anyway-horizontal-logo-cropped.png" />
+    <link rel="apple-touch-icon" href="assets/steady-anyway-horizontal-logo-cropped.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -48,12 +61,12 @@
         </div>
 
         <!--
-          SPOTIFY PLAYER SETUP:
-          After the first episode is published, choose "Share > Embed show"
-          in Spotify and paste the complete iframe code or its src URL into
-          player.spotifyEmbed in podcast-config.js.
+          PLAYER SETUP:
+          Paste a Spotify, Spotify for Podcasters, or standard iframe player
+          into player.embedUrl in podcast-config.js. You can paste the complete
+          iframe code or only the iframe src URL.
 
-          Spotify's embed will look similar to this:
+          A Spotify embed will look similar to this:
           <iframe
             src="https://open.spotify.com/embed/show/YOUR_SPOTIFY_SHOW_ID"
             width="100%"
@@ -66,8 +79,8 @@
         -->
         <div class="podcast-player-frame" data-podcast-player aria-live="polite">
           <div class="podcast-player-placeholder">
-            <h3>Spotify player coming soon</h3>
-            <p>Paste the Spotify show embed into podcast-config.js after the first episode is published.</p>
+            <h3>Episodes are coming soon.</h3>
+            <p>The podcast player will appear here after an embed URL is added to podcast-config.js.</p>
           </div>
         </div>
       </section>
@@ -80,6 +93,23 @@
         <div class="episode-list" data-episode-library aria-label="Episodes"></div>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/steady-anyway-horizontal-logo-cropped.png" alt="Steady Anyway" />
+        <p>Life is rough. Nobody has all the answers. Stay Steady Anyway.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="community.html">Community</a>
+        <a href="https://www.youtube.com/@SteadyAnyway" target="_blank" rel="noreferrer">YouTube</a>
+        <a href="contact.html">Instagram</a>
+        <a href="mailto:hello@steadyanyway.com">Email</a>
+      </nav>
+    </footer>
 
     <script src="podcast-config.js"></script>
     <script src="script.js"></script>

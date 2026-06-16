@@ -293,6 +293,10 @@ main {
   aspect-ratio: 1.66;
 }
 
+.youtube-embed-card iframe {
+  background: #080b0a;
+}
+
 .edit-toolbar {
   position: fixed;
   right: 1rem;
@@ -790,6 +794,58 @@ body.editing [contenteditable="true"] {
   line-height: 1.6;
 }
 
+.site-footer {
+  width: min(100%, 1580px);
+  margin: clamp(3rem, 7vw, 6rem) auto 0;
+  padding: clamp(2rem, 4.8vw, 3.5rem) clamp(1.25rem, 4.8vw, 4.75rem);
+  border-top: 1px solid var(--line-yellow);
+  background:
+    linear-gradient(180deg, rgba(185, 144, 67, 0.08), rgba(5, 9, 9, 0)),
+    rgba(5, 9, 9, 0.72);
+}
+
+.footer-brand {
+  display: grid;
+  grid-template-columns: minmax(10rem, 15rem) minmax(16rem, 1fr);
+  gap: clamp(1.25rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.footer-brand img {
+  width: 100%;
+  max-height: 4.7rem;
+  object-fit: contain;
+}
+
+.footer-brand p {
+  margin: 0;
+  color: var(--text);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.35rem, 2vw, 2rem);
+  line-height: 1.25;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem clamp(1.1rem, 3vw, 2.3rem);
+  margin-top: 2rem;
+  padding-top: 1.45rem;
+  border-top: 1px solid var(--line);
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer-links a:hover {
+  color: var(--yellow);
+}
+
 .section-heading {
   display: flex;
   align-items: center;
@@ -978,6 +1034,18 @@ body.editing [contenteditable="true"] {
   line-height: 1.45;
 }
 
+.connection-status {
+  margin: -0.35rem 0 0.15rem;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba(185, 144, 67, 0.35);
+  border-radius: 0.35rem;
+  color: var(--yellow);
+  background: rgba(185, 144, 67, 0.08);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
 .contact-form label {
   display: grid;
   gap: 0.55rem;
@@ -1112,6 +1180,10 @@ body.editing [contenteditable="true"] {
   .community-benefits article + article {
     border-top: 1px solid var(--line);
     border-left: 0;
+  }
+
+  .footer-brand {
+    grid-template-columns: 1fr;
   }
 }
 

@@ -43,7 +43,8 @@ function normalizeMediaSource(source) {
 
 function configureHomepageVideo() {
   const target = document.querySelector('[data-edit-media="homepage-video"]');
-  const embedUrl = youtubeEmbed(homepageConfig?.featuredYouTubeVideo);
+  const configuredValue = homepageConfig?.featuredYouTubeVideoUrl || homepageConfig?.featuredYouTubeVideo;
+  const embedUrl = youtubeEmbed(configuredValue);
   if (!target || !embedUrl) return;
 
   const iframe = document.createElement("iframe");
@@ -55,7 +56,7 @@ function configureHomepageVideo() {
   target.replaceChildren(iframe);
 }
 
-function spotifyEmbedUrl(value) {
+function iframeEmbedUrl(value) {
   const source = String(value || "").trim();
   if (!source) return "";
   const iframeMatch = source.match(/src=["']([^"']+)["']/i);
@@ -63,8 +64,7 @@ function spotifyEmbedUrl(value) {
 
   try {
     const url = new URL(candidate);
-    const isSpotifyEmbed = url.hostname === "open.spotify.com" && url.pathname.startsWith("/embed/");
-    return isSpotifyEmbed ? url.href : "";
+    return url.protocol === "https:" ? url.href : "";
   } catch {
     return "";
   }
@@ -72,15 +72,15 @@ function spotifyEmbedUrl(value) {
 
 function configurePodcastPlayer() {
   const target = document.querySelector("[data-podcast-player]");
-  const configuredValue = podcastConfig?.player?.spotifyEmbed;
+  const configuredValue = podcastConfig?.player?.embedUrl || podcastConfig?.player?.spotifyEmbed;
   if (!target || !configuredValue) return;
 
-  const embedUrl = spotifyEmbedUrl(configuredValue);
+  const embedUrl = iframeEmbedUrl(configuredValue);
   if (!embedUrl) {
     target.innerHTML = `
       <div class="podcast-player-placeholder">
-        <h3>Spotify embed needs attention</h3>
-        <p>Paste Spotify's complete embed iframe or an open.spotify.com/embed URL into podcast-config.js.</p>
+        <h3>Player embed needs attention</h3>
+        <p>Paste a complete iframe or HTTPS embed URL into podcast-config.js.</p>
       </div>
     `;
     return;
@@ -167,17 +167,16 @@ function setupCommunitySignup() {
       name,
       email,
       source: "steady-anyway-community-page",
-      newsletterSchedule: communityConfig?.newsletterSchedule || "weekly-sunday",
-      discordInviteRequested: communityConfig?.discordInviteEnabled !== false,
-      welcomeEmail: communityConfig?.welcomeEmail || null,
+      provider: communityConfig?.provider || "demo",
+      discordInviteNote: communityConfig?.discordInviteNote || "",
     };
 
-    const endpoint = communityConfig?.signupEndpoint;
+    const endpoint = communityConfig?.formActionUrl || communityConfig?.signupEndpoint;
     note.textContent = "Adding you to the community...";
 
     if (!endpoint) {
       saveLocalCommunitySignup(payload);
-      note.textContent = "Signup saved locally. Add a signup endpoint in community-config.js to send the Sunday newsletter and Discord invite email.";
+      note.textContent = "Demo mode: signup saved locally. Add provider and formActionUrl in community-config.js to connect newsletter delivery.";
       signupForm.reset();
       return;
     }
@@ -191,13 +190,33 @@ function setupCommunitySignup() {
 
       if (!response.ok) throw new Error(`Signup failed with status ${response.status}`);
 
-      note.textContent = "You are on the list. Check your email for the Discord invitation and Sunday newsletter.";
+      note.textContent = communityConfig?.successMessage || "You are on the list. Check your email for the next update.";
       signupForm.reset();
     } catch (error) {
       note.textContent = "The signup connection is not responding yet. Check community-config.js or try again later.";
       console.error(error);
     }
   });
+
+  const endpoint = communityConfig?.formActionUrl || communityConfig?.signupEndpoint;
+  const provider = communityConfig?.provider || "";
+  const connectionNote = document.querySelector("[data-community-connection-note]");
+  const discordNote = document.querySelector("[data-community-discord-note]");
+
+  if (endpoint) {
+    signupForm.action = endpoint;
+    signupForm.method = "post";
+  }
+
+  if (connectionNote) {
+    connectionNote.textContent = endpoint
+      ? `Connected${provider ? ` to ${provider}` : ""}.`
+      : "Demo mode: this form is not connected to a newsletter provider yet.";
+  }
+
+  if (discordNote && communityConfig?.discordInviteNote) {
+    discordNote.textContent = communityConfig.discordInviteNote;
+  }
 }
 
 function assignEditorIds() {

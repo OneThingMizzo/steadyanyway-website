@@ -3,8 +3,20 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Community | Steady Anyway</title>
+    <title>Steady Anyway Community | Newsletter and Discord</title>
+    <meta name="description" content="Join the Steady Anyway community for the Sunday newsletter and updates about the private Discord community." />
+    <link rel="canonical" href="https://steadyanyway.com/community.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Steady Anyway Community | Newsletter and Discord" />
+    <meta property="og:description" content="Get steady thoughts, practical takeaways, and community updates from Steady Anyway." />
+    <meta property="og:url" content="https://steadyanyway.com/community.html" />
+    <meta property="og:image" content="https://steadyanyway.com/assets/mountain-hero.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Steady Anyway Community | Newsletter and Discord" />
+    <meta name="twitter:description" content="Join the Sunday newsletter and get updates about the private Steady Anyway community." />
+    <meta name="twitter:image" content="https://steadyanyway.com/assets/mountain-hero.png" />
+    <link rel="icon" href="assets/steady-anyway-horizontal-logo-cropped.png" />
+    <link rel="apple-touch-icon" href="assets/steady-anyway-horizontal-logo-cropped.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -49,6 +61,7 @@
 
         <form class="contact-form community-form" id="communitySignupForm">
           <h2>Become a member</h2>
+          <p class="connection-status" data-community-connection-note>Demo mode: this form is not connected to a newsletter provider yet.</p>
           <label>
             <span class="field-label">Name</span>
             <input name="name" type="text" autocomplete="name" />
@@ -62,10 +75,27 @@
             <span class="btn-label">Join the Community</span>
           </button>
           <p class="form-note" role="status" aria-live="polite"></p>
-          <p class="automation-note">Newsletter delivery and Discord invitations are ready to connect through community-config.js.</p>
+          <p class="automation-note" data-community-discord-note>Discord invitations will be included once the community is connected.</p>
         </form>
       </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <img src="assets/steady-anyway-horizontal-logo-cropped.png" alt="Steady Anyway" />
+        <p>Life is rough. Nobody has all the answers. Stay Steady Anyway.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="podcast.html">Podcast</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="community.html">Community</a>
+        <a href="https://www.youtube.com/@SteadyAnyway" target="_blank" rel="noreferrer">YouTube</a>
+        <a href="contact.html">Instagram</a>
+        <a href="mailto:hello@steadyanyway.com">Email</a>
+      </nav>
+    </footer>
 
     <script src="community-config.js"></script>
     <script src="script.js"></script>
